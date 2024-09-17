@@ -22,7 +22,7 @@ app.use('/favicon.ico', express.static(path.join(__dirname, 'public', 'favicon.i
 app.use('/database', express.static(path.join(__dirname, '..', 'database')));
 
 // مسارات الخطبات
-app.use('/api/khutbahs', khutbahRoutes);
+app.use('/api', khutbahRoutes);
 
 // التعامل مع الأخطاء إذا لم يتم إيجاد المسار
 app.use((req, res, next) => {

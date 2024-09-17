@@ -21,7 +21,7 @@ const getAllKhutbahs = (page = 1, limit = 20) => {
         const slug = khutbah.slug;
         return {
             ...khutbah,
-            url: `/api/khutbahs/${slug}`
+            url: `/api/${slug}`
         };
     });
 
