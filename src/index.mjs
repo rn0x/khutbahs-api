@@ -1,13 +1,19 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
+import cors from 'cors';
 import path from 'path';
-import khutbahRoutes from './routes/khutbahRoutes.mjs';
 import { fileURLToPath } from 'url';
+import khutbahRoutes from './routes/khutbahRoutes.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
+// Disable the X-Powered-By header
+app.disable('x-powered-by');
+// تفعيل CORS
+app.use(cors());
+
 
 // إعداد Middleware للتعامل مع JSON
 app.use(express.json());
